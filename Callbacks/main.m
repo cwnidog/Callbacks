@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-int main(int argc, const char * argv[]) {
-  @autoreleasepool {
-      // insert code here...
-      NSLog(@"Hello, World!");
-  }
+int main(int argc, const char *argv[]){
+  @autoreleasepool
+  {
+    [[NSRunLoop currentRunLoop] run];
+  } // @autoreleasepool
+  
     return 0;
-}
+} // main()
