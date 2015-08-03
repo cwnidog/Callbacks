@@ -8,6 +8,10 @@
 
 #import "BNRLogger.h"
 
+@interface BNRLogger()
+- (void)zoneChange:(NSNotification *)note;
+@end
+
 @implementation BNRLogger
 
 // Called each time a chunk of data arrives
@@ -65,5 +69,10 @@
   [self setLastTime:now];
   NSLog(@"Just set time to %@", self.lastTimeString);
 } // updateLastTime()
+
+- (void)zoneChange:(NSNotification *)note
+{
+  NSLog(@"The system time zone has changed!");
+} // zoneChange()
 
 @end
