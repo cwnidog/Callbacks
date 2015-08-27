@@ -28,7 +28,7 @@ int main(int argc, const char *argv[]){
     __unused BNRObserver *observer = [BNRObserver new];
     
     // notify with new an dold values when lastTime is changed
-    [logger addObserver:observer forKeyPath:@"lastTime" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+    [logger addObserver:observer forKeyPath:@"lastTimeString" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
     [[NSRunLoop currentRunLoop] run];
   } // @autoreleasepool

@@ -66,7 +66,9 @@
 - (void)updateLastTime:(NSTimer *)t
 {
   NSDate *now = [NSDate date];
-  [self setLastTime:now];
+  [self willChangeValueForKey:@"lastTime"];
+  _lastTime = now;
+  [self didChangeValueForKey:@"lastTime"];
   NSLog(@"Just set time to %@", self.lastTimeString);
 } // updateLastTime()
 
@@ -74,5 +76,10 @@
 {
   NSLog(@"The system time zone has changed!");
 } // zoneChange()
+
++ (NSSet *)keyPathsForValuesAffectingLastTimeString
+{
+  return [NSSet setWithObject:@"LastTime"];
+}
 
 @end
